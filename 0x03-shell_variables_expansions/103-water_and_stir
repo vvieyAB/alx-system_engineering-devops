@@ -1,0 +1,10 @@
+#!/bin/bash
+# Convert WATER (base water) and STIR (base stir) to base 10
+w=$(echo "$WATER" | tr 'water' '01234')
+s=$(echo "$STIR" | tr 'stir.' '01234')
+
+# Add them in base 10
+sum=$((w + s))
+
+# Convert result to base bestchol
+echo "$sum" | tr '0123456789' 'bestcholhc'
